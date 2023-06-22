@@ -2,6 +2,11 @@
 #define __MONTY_H__
 #define _GNU_SOURCE
 
+#define STACK 0
+#define QUEUE 1
+
+#define DELIMS " \n\t\a\b"
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,6 +16,8 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
+
+extern char **op_toks;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -39,11 +46,7 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-#define STACK 0
-#define QUEUE 1
 
-#define DELIMS " \n\t\a\b"
-extern char **op_toks;
 /*for errors */
 int openFileError(char *filename);
 int malloc_error(void);
@@ -54,6 +57,7 @@ int no_int_error(unsigned int line_number);
 int divError(unsigned int line_number);
 int popError(unsigned int line_number);
 int pintError(unsigned int line_number);
+int pcharError(unsigned int line_number, char *message);
 /* functions */
 void my_add(stack_t **stack, unsigned int line_number);
 void my_pall(stack_t **stack, unsigned int line_number);
