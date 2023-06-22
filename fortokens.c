@@ -27,3 +27,22 @@ unsigned int token_arr_len(void)
 		toks_len++;
 	return (toks_len);
 }
+/**
+ * is_delim - checks if delimitor char
+ * @ch: character 
+ * @delims: array of delimitors
+ * Return: 1 (success) 0 (failure)
+ */
+
+int is_delim(char ch, char *delims)
+{
+	int i = 0;
+
+	while (delims[i])
+	{
+		if (delims[i] == ch)
+			return (1);
+		i++;
+	}
+	return (0);
+}
