@@ -48,7 +48,9 @@ int short_stack_error(unsigned int line_number, char *op);
 void set_op_tok_error(int error_code);
 int unknownOpError(char *opcode, unsigned int line_number);
 int no_int_error(unsigned int line_number);
-
+int divError(unsigned int line_number);
+int popError(unsigned int line_number);
+int pintError(unsigned int line_number);
 /* functions */
 void my_add(stack_t **stack, unsigned int line_number);
 void my_pall(stack_t **stack, unsigned int line_number);
@@ -71,7 +73,15 @@ void freeTokens(void);
 unsigned int token_arr_len(void);
 int is_delim(char ch, char *delims);
 int checkEmptyLine(char *line, char *delims);
+char **_strtok(char *str, char *delims);
+int get_word_count(char *str, char *delims);
+char *get_next_word(char *str, char *delims);;
 
-
+int get_word_length(char *str, char *delims);
+char *get_int(int num);
+unsigned int _abs(int);
+int get_numbase_len(unsigned int num, unsigned int base);
+void fill_numbase_buff(unsigned int num, unsigned int base,
+		       char *buff, int buff_size);
 
 #endif /* __MONTY_H__ */
