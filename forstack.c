@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "monty.h"
 /**
  * initializStack - Initializes a stack_t stack with beginning
  *              stack and ending queue nodes.
@@ -39,3 +39,4 @@ void freeStack(stack_t **stack)
 		*stack = tmp;
 	}
 }
+

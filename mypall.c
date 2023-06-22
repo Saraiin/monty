@@ -1,4 +1,4 @@
-#include "mounty.c"
+#include "monty.h"
 /**
  * my_pall - Prints the values of a stack_t linked list.
  * @stack: A pointer to the top mode node of a stack_t linked list.

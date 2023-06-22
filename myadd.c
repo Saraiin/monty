@@ -1,4 +1,4 @@
-#include <monty.h>
+#include "monty.h"
 /**
  * my_add - Adds the top two values of a stack_t linked list.
  * @stack: A pointer to the top mode node of a stack_t linked list.
@@ -16,5 +16,5 @@ void my_add(stack_t **stack, unsigned int line_number)
 	}
 
 	(*stack)->next->next->n += (*stack)->next->n;
-	monty_pop(stack, line_number);
+	my_pop(stack, line_number);
 }

@@ -9,18 +9,18 @@
  */
 int main(int ac, char **av)
 {
-	int exiCode = EXIT_SUCCESS;
-    FILE *fileToOpen = NULL;
+	int exitCode = EXIT_SUCCESS;
+	FILE *fileToOpen = NULL;
 
-	if (argc != 2)
+	if (ac != 2)
 	{
-        fprintf(stderr, "USAGE: monty file\n");
-	    return (EXIT_FAILURE);
-    }
+		fprintf(stderr, "USAGE: monty file\n");
+		return (EXIT_FAILURE);
+	}
 	fileToOpen = fopen(av[1], "r");
 	if (fileToOpen == NULL)
 		return (openFileError(av[1]));
-	exitCode = montyRun(fileToOpen);
+	exitCode = runMonty(fileToOpen);
 	fclose(fileToOpen);
 	return (exitCode);
 }

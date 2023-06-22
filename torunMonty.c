@@ -12,13 +12,13 @@ int runMonty(FILE *script_fd)
 	unsigned int line_number = 0, prev_tok_len = 0;
 	void (*op_func)(stack_t**, unsigned int);
 
-	if (initialiseStack(&stack) == EXIT_FAILURE)
+	if (initializStack(&stack) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
 
 	while (getline(&line, &len, script_fd) != -1)
 	{
 		line_number++;
-		op_toks = strtok(line, DELIMS);
+		op_toks = _strtok(line, DELIMS);
 		if (op_toks == NULL)
 		{
 			if (checkEmptyLine(line, DELIMS))
@@ -34,7 +34,7 @@ int runMonty(FILE *script_fd)
 		op_func = getMyOpFunc(op_toks[0]);
 		if (op_func == NULL)
 		{
-			free_stack(&stack);
+			freeStack(&stack);
 			exit_status = unknownOpError(op_toks[0], line_number);
 			freeTokens();
 			break;

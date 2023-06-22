@@ -1,4 +1,4 @@
-#include "monty.c"
+#include "monty.h"
 /**
  * my_pint - Prints the top value of a stack_t linked list.
  * @stack: A pointer to the top mode node of a stack_t linked list.
