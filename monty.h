@@ -66,11 +66,16 @@ void my_mul(stack_t **stack, unsigned int line_number);
 void my_div(stack_t **stack, unsigned int line_number);
 void my_sub(stack_t **stack, unsigned int line_number);
 void my_mod(stack_t **stack, unsigned int line_number);
+void my_pchar(stack_t **stack, unsigned int line_number);
+void my_pstr(stack_t **stack, unsigned int line_number);
+void my_rotr(stack_t **stack, unsigned int line_number);
+void my_rotl(stack_t **stack, unsigned int line_number);
 /* stack */
 int initializStack(stack_t **stack);
 void freeStack(stack_t **stack);
 int check_mode(stack_t *stack);
-
+void my_stack(stack_t **stack, unsigned int line_number);
+void my_queue(stack_t **stack, unsigned int line_number);
 
 void (*getMyOpFunc(char *opcode))(stack_t**, unsigned int);
 int runMonty(FILE *script_fd);
