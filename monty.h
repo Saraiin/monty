@@ -40,10 +40,36 @@ typedef struct instruction_s
 
 #define DELIMS " \n\t\a\b"
 extern char **op_toks;
+/*for errors */
+int openFileError(char *filename);
+int malloc_error(void);
+int short_stack_error(unsigned int line_number, char *op);
+void set_op_tok_error(int error_code);
+int unknownOpError(char *opcode, unsigned int line_number);
+int no_int_error(unsigned int line_number);
+
+/* functions */
+void my_add(stack_t **stack, unsigned int line_number);
+void my_pall(stack_t **stack, unsigned int line_number);
+void my_push(stack_t **stack, unsigned int line_number);
+void my_nop(stack_t **stack, unsigned int line_number);
+void my_pint(stack_t **stack, unsigned int line_number);
+void my_swap(stack_t **stack, unsigned int line_number);
+void my_pop(stack_t **stack, unsigned int line_number);
+
+/* stack */
+int initializStack(stack_t **stack);
+void freeStack(stack_t **stack);
+int check_mode(stack_t *stack);
 
 
-
-
+void (*getMyOpFunc(char *opcode))(stack_t**, unsigned int);
+int runMonty(FILE *script_fd);
+/* for tokens */
+void freeTokens(void);
+unsigned int token_arr_len(void);
+int is_delim(char ch, char *delims);
+int checkEmptyLine(char *line, char *delims);
 
 
 
