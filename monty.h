@@ -1,5 +1,7 @@
 #ifndef __MONTY_H__
 #define __MONTY_H__
+#define _GNU_SOURCE
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,6 +10,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -78,7 +81,7 @@ int is_delim(char ch, char *delims);
 int checkEmptyLine(char *line, char *delims);
 char **_strtok(char *str, char *delims);
 int get_word_count(char *str, char *delims);
-char *get_next_word(char *str, char *delims);;
+char *get_next_word(char *str, char *delims);
 
 int get_word_length(char *str, char *delims);
 char *get_int(int num);

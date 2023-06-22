@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "monty.h"
 /**
  * check_mode - Checks if a stack_t linked list is in stack or queue mode.
  * @stack: A pointer to the top (stack) or bottom (queue)

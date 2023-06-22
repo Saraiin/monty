@@ -14,7 +14,6 @@ int runMonty(FILE *script_fd)
 
 	if (initializStack(&stack) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
-
 	while (getline(&line, &len, script_fd) != -1)
 	{
 		line_number++;
@@ -53,13 +52,11 @@ int runMonty(FILE *script_fd)
 		freeTokens();
 	}
 	freeStack(&stack);
-
 	if (line && *line == 0)
 	{
 		free(line);
 		return (malloc_error());
 	}
-
 	free(line);
 	return (exit_status);
 }
