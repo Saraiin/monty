@@ -59,7 +59,10 @@ void my_nop(stack_t **stack, unsigned int line_number);
 void my_pint(stack_t **stack, unsigned int line_number);
 void my_swap(stack_t **stack, unsigned int line_number);
 void my_pop(stack_t **stack, unsigned int line_number);
-
+void my_mul(stack_t **stack, unsigned int line_number);
+void my_div(stack_t **stack, unsigned int line_number);
+void my_sub(stack_t **stack, unsigned int line_number);
+void my_mod(stack_t **stack, unsigned int line_number);
 /* stack */
 int initializStack(stack_t **stack);
 void freeStack(stack_t **stack);
