@@ -8,18 +8,18 @@
 void (*getMyOpFunc(char *opcode))(stack_t**, unsigned int)
 {
 	instruction_t op_funcs[] = {
-		{"push", monty_push},
-		{"pall", monty_pall},
-		{"pint", monty_pint},
-		{"pop", monty_pop},
-		{"swap", monty_swap},
-		{"add", monty_add},
-		{"nop", monty_nop},
-		{"sub", monty_sub},
-		{"div", monty_div},
-		{"mul", monty_mul},
-		{"mod", monty_mod},
-		{"pchar", monty_pchar},
+		{"push", my_push},
+		{"pall", my_pall},
+		{"pint", my_pint},
+		{"pop", my_pop},
+		{"swap", my_swap},
+		{"add", my_add},
+		{"nop", my_nop},
+		{"sub", my_sub},
+		{"div", my_div},
+		{"mul", my_mul},
+		{"mod", my_mod},
+		{"pchar", my_pchar},
 		{NULL, NULL}
 	};
 	int i;
