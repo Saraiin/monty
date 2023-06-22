@@ -35,6 +35,11 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+#define STACK 0
+#define QUEUE 1
+
+#define DELIMS " \n\t\a\b"
+extern char **op_toks;
 
 
 
